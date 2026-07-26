@@ -16,7 +16,11 @@ RUN dnf install -y \
         fish \
         eza \
         vim \
+        glibc-langpack-en \
     && dnf clean all
+
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 # OpenCode: prebuilt standalone binary, linux/arm64, pinned version.
 RUN curl -fsSL \
