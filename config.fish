@@ -80,3 +80,16 @@ set -x LC_CTYPE en_US.UTF-8
 
 set --export PATH $HOME/.config/emacs/bin $PATH
 set --export PATH $HOME/.local/bin $PATH
+
+
+function new_project
+    if test (count $argv) -eq 0
+        echo "Usage: new_project <project-name>"
+        return 1
+    end
+
+    mkdir $argv[1]
+    cd $argv[1]
+    git init
+    git commit --allow-empty -m "init"
+end
