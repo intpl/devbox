@@ -1,0 +1,22 @@
+[Unit]
+Description=Isolated AI devbox (nested podman + opencode)
+
+[Container]
+Image=localhost/devbox:latest
+ContainerName=dev
+HostName=devbox
+# --privileged is required for nested podman. It is safe HERE only because
+# the whole container is rootless: confined to b's subuids, never uid 0 on
+# the host. --cpus/--pids-limit protect the host lifeline (ssh/mosh/caddy).
+PodmanArgs=--privileged --cpus=1.5 --pids-limit=512 --memory=1.5g
+PublishPort=10.7.0.1:4000-4009:4000-4009
+Volume=%h/dev:/home/b/dev
+Volume=opencode-config:/root/.config/opencode
+Volume=opencode-local:/root/.local/share/opencode
+Volume=inner-storage:/var/lib/containers
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
