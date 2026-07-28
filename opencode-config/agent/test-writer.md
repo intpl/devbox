@@ -1,7 +1,7 @@
 ---
 description: Writes and fixes Vitest tests, runs them until green. May NEVER modify source files — reports source bugs back instead.
 mode: subagent
-model: opencode-zen/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.1
 tools:
   bash: true

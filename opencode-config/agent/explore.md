@@ -1,7 +1,7 @@
 ---
 description: Read-only codebase reconnaissance. Fast search and summarization. Cannot modify or execute anything.
 mode: subagent
-model: opencode-zen/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.1
 tools:
   bash: false
