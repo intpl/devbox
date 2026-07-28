@@ -1,15 +1,8 @@
 {
+  "plugin": ["oh-my-openagent@latest"],
   "$schema": "https://opencode.ai/config.json",
-
-  // Primary model: the orchestrator brain. You talk only to this.
   "model": "opencode/kimi-k3",
-
-  // Utility model for title generation and other housekeeping calls.
   "small_model": "opencode/deepseek-v4-flash-free",
-
-  // Global permission floor: flat allow, ZERO ask-rules.
-  // Ask-prompts stall unsupervised runs forever — nothing must ever block.
-  // Subagent agents/*.md files layer their own denies on top of this.
   "permission": {
     "edit": "allow",
     "bash": "allow",

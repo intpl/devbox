@@ -8,7 +8,7 @@ HostName=devbox
 # --privileged is required for nested podman. It is safe HERE only because
 # the whole container is rootless: confined to b's subuids, never uid 0 on
 # the host. --cpus/--pids-limit protect the host lifeline (ssh/mosh/caddy).
-PodmanArgs=--privileged --cpus=1.5 --pids-limit=1024 --memory=1.5g
+PodmanArgs=--privileged --cpus=1.8 --pids-limit=2048 --memory=1.8g
 PublishPort=10.7.0.1:4000-4009:4000-4009
 Volume=%h/dev:/home/b/dev
 Volume=%h/devbox/opencode-config:/root/.config/opencode
