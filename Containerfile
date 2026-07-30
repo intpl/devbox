@@ -1,6 +1,6 @@
 # Pin the base image by digest (step 4.2). quay.io/podman/stable is the
-# Podman team's purpose-built Podman-in-Podman image (multi-arch, has arm64).
-FROM quay.io/podman/stable@sha256:83c718f797a42f399d608a888f8e4d2aa1eb3bc98aed8d888dbbcf43f955fc2b
+# Podman team's purpose-built Podman-in-Podman image (multi-arch, has amd64).
+FROM quay.io/podman/stable@sha256:c6c3feef40a5c825a98e62a11c8ed4c36ec603327d56eb629230a671e527c3dd
 
 # Pin OpenCode. Set to the current release from
 # https://github.com/sst/opencode/releases  (without this the build fails —
@@ -22,9 +22,9 @@ RUN dnf install -y \
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-# OpenCode: prebuilt standalone binary, linux/arm64, pinned version.
+# OpenCode: prebuilt standalone binary, linux/amd64, pinned version.
 RUN curl -fsSL \
-      "https://github.com/anomalyco/opencode/releases/download/v${OPENCODE_VERSION}/opencode-linux-arm64.tar.gz" \
+      "https://github.com/anomalyco/opencode/releases/download/v${OPENCODE_VERSION}/opencode-linux-x64.tar.gz" \
       -o /tmp/opencode.tar.gz \
     && cd /tmp \
     && tar -xzf opencode.tar.gz \
@@ -33,8 +33,8 @@ RUN curl -fsSL \
 
 # Git identity for everything committed inside the container.
 # Machine authorship is visible in history; no credentials exist here.
-RUN git config --system user.name "opencode-ai" \
-    && git config --system user.email "ai@gladecki.pl" \
+RUN git config --system user.name "bartek ai" \
+    && git config --system user.email "bartek ai" \
     && git config --system init.defaultBranch main \
     && git config --system safe.directory "*"
 

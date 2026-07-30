@@ -1,11 +1,33 @@
 {
-  "plugin": ["oh-my-openagent@latest"],
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/kimi-k3",
   "small_model": "opencode/deepseek-v4-flash-free",
+  "model": "nvidia/z-ai/glm-5.2",
   "permission": {
     "edit": "allow",
     "bash": "allow",
     "webfetch": "allow"
+  },
+  "agent": {
+    "deep-research-synthesizer": {
+      "mode": "primary",
+      "model": "nvidia/z-ai/glm-5.2",
+      "permission": {
+        "task": "allow"
+      }
+    },
+    "research-thread": {
+      "description": "Research subagent: investigates one narrow research question via web search and source fetching, returns structured findings. Invoked only by the deep-research-synthesizer orchestrator.",
+      "mode": "subagent",
+      "model": "opencode/deepseek-v4-flash-free",
+      "hidden": true,
+      "tools": {
+        "websearch": true,
+        "webfetch": true,
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    }
   }
 }
+

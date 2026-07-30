@@ -44,7 +44,7 @@ function fish_prompt
   set -l git_dir (git rev-parse --git-dir 2> /dev/null)
 
   set_color blue
-  printf 'TUSK PODMAN DEV :: '
+  printf 'podman dev :: '
   set_color normal
 
   if test -n "$git_dir"
