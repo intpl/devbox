@@ -1,6 +1,6 @@
 # Pin the base image by digest (step 4.2). quay.io/podman/stable is the
 # Podman team's purpose-built Podman-in-Podman image (multi-arch, has amd64).
-FROM quay.io/podman/stable@sha256:c6c3feef40a5c825a98e62a11c8ed4c36ec603327d56eb629230a671e527c3dd
+FROM quay.io/podman/stable:latest
 
 # Pin OpenCode. Set to the current release from
 # https://github.com/sst/opencode/releases  (without this the build fails —
@@ -8,15 +8,16 @@ FROM quay.io/podman/stable@sha256:c6c3feef40a5c825a98e62a11c8ed4c36ec603327d56eb
 ARG OPENCODE_VERSION=1.18.5
 
 RUN dnf install -y \
-        git \
-        podman-compose \
-        curl \
-        ca-certificates \
-        unzip \
-        fish \
-        eza \
-        vim \
-        glibc-langpack-en \
+    git \
+    podman-compose \
+    curl \
+    ca-certificates \
+    unzip \
+    fish \
+    eza \
+    vim \
+    glibc-langpack-en \
+    net-tools \
     && dnf clean all
 
 ENV LANG=en_US.UTF-8
@@ -45,5 +46,8 @@ RUN ln -s /home/b/dev/skills /root/.agents/skills
 
 COPY config.fish /root/.config/fish/config.fish
 
-WORKDIR /home/b/dev
-CMD ["sleep", "infinity"]
+# hack for opencode
+RUN touch /usr/local/bin/xdg-open; chmod +x /usr/local/bin/xdg-open
+
+WORKDIR /home/b/dev/community_calendar
+CMD ["opencode", "web", "--port", "4009", "--hostname", "0.0.0.0"]
