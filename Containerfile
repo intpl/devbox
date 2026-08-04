@@ -16,6 +16,7 @@ RUN dnf install -y \
     procps-ng \
     npx \
     elixir \
+    postgresql-contrib \
     && dnf clean all
 
 ENV LANG=en_US.UTF-8
@@ -54,4 +55,4 @@ COPY config.fish /root/.config/fish/config.fish
 RUN touch /usr/local/bin/xdg-open; chmod +x /usr/local/bin/xdg-open
 
 WORKDIR /home/b/dev/
-CMD ["opencode", "web"]
+CMD ["sleep", "infinity"]
