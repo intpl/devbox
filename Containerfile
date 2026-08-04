@@ -2,11 +2,6 @@
 # Podman team's purpose-built Podman-in-Podman image (multi-arch, has amd64).
 FROM quay.io/podman/stable:latest
 
-# Pin OpenCode. Set to the current release from
-# https://github.com/sst/opencode/releases  (without this the build fails —
-# deliberately, so the version is always a conscious choice).
-ARG OPENCODE_VERSION=1.18.5
-
 RUN dnf install -y \
     git \
     podman-compose \
@@ -18,10 +13,18 @@ RUN dnf install -y \
     vim \
     glibc-langpack-en \
     net-tools \
+    procps-ng \
+    npx \
+    elixir \
     && dnf clean all
 
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
+
+# Pin OpenCode. Set to the current release from
+# https://github.com/sst/opencode/releases  (without this the build fails —
+# deliberately, so the version is always a conscious choice).
+ARG OPENCODE_VERSION=1.18.12
 
 # OpenCode: prebuilt standalone binary, linux/amd64, pinned version.
 RUN curl -fsSL \
@@ -37,7 +40,8 @@ RUN curl -fsSL \
 RUN git config --system user.name "bartek ai" \
     && git config --system user.email "bartek ai" \
     && git config --system init.defaultBranch main \
-    && git config --system safe.directory "*"
+    && git config --system safe.directory "*" \
+    && git config --global alias.st status
 
 RUN curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | bash
 
@@ -49,5 +53,5 @@ COPY config.fish /root/.config/fish/config.fish
 # hack for opencode
 RUN touch /usr/local/bin/xdg-open; chmod +x /usr/local/bin/xdg-open
 
-WORKDIR /home/b/dev/community_calendar
-CMD ["opencode", "web", "--port", "4009", "--hostname", "0.0.0.0"]
+WORKDIR /home/b/dev/
+CMD ["opencode", "web"]
