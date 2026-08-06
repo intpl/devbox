@@ -1,3 +1,5 @@
+function oc; opencode --auto $argv; end
+
 function v; nvim $argv; end
 function vi; nvim -u NONE $argv; end
 function cdi;cd ~/work/; end

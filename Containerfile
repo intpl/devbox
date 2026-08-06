@@ -17,6 +17,7 @@ RUN dnf install -y \
     npx \
     elixir \
     postgresql-contrib \
+    ripgrep \
     && dnf clean all
 
 ENV LANG=en_US.UTF-8
@@ -25,7 +26,7 @@ ENV LC_ALL=en_US.UTF-8
 # Pin OpenCode. Set to the current release from
 # https://github.com/sst/opencode/releases  (without this the build fails —
 # deliberately, so the version is always a conscious choice).
-ARG OPENCODE_VERSION=1.18.12
+ARG OPENCODE_VERSION=1.18.13
 
 # OpenCode: prebuilt standalone binary, linux/amd64, pinned version.
 RUN curl -fsSL \
