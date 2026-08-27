@@ -1,10 +1,10 @@
 function oc; opencode --auto $argv; end
 
-function v; nvim $argv; end
-function vi; nvim -u NONE $argv; end
+function v; vim $argv; end
+function vi; vim -u NONE $argv; end
 function cdi;cd ~/work/; end
 function cdv;cd ~/code/void-packages; end
-function svim; sudo -E nvim $argv; end
+function svim; sudo -E vim $argv; end
 
 function ll; eza -l $argv; end
 function la; eza -la $argv; end
