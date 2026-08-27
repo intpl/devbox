@@ -19,6 +19,8 @@ RUN dnf install -y \
     elixir \
     postgresql-contrib \
     ripgrep \
+    pandoc \
+    python3 \
     && dnf clean all
 
 ENV LANG=en_US.UTF-8
