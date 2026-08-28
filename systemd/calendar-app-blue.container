@@ -1,0 +1,23 @@
+[Unit]
+Description=Community Calendar app (blue)
+Requires=calendar-network.service calendar-db.service
+After=calendar-network.service calendar-db.service
+
+[Container]
+ContainerName=calendar-app-blue
+Image=localhost/community_calendar:current
+Network=calendar-net
+EnvironmentFile=/home/b/community_calendar/.env
+PublishPort=127.0.0.1:4021:4000
+HealthCmd=curl -fsS http://localhost:4000/up
+HealthInterval=15s
+HealthTimeout=3s
+HealthRetries=5
+HealthStartPeriod=30s
+
+[Service]
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=default.target

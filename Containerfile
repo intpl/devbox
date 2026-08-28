@@ -21,6 +21,8 @@ RUN dnf install -y \
     ripgrep \
     pandoc \
     python3 \
+    ffmpeg-free \
+    dejavu-sans-fonts \
     && dnf clean all
 
 ENV LANG=en_US.UTF-8

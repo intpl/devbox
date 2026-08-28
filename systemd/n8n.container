@@ -1,0 +1,30 @@
+[Unit]
+Description=n8n workflow automation
+After=network-online.target webnet-network.service
+Requires=webnet-network.service
+Wants=network-online.target
+
+[Container]
+Image=docker.io/n8nio/n8n:latest
+PublishPort=127.0.0.1:5678:5678
+ContainerName=n8n
+HostName=n8n
+# Attach to your existing internal network
+Network=webnet.network
+
+# n8n requires these to know its public-facing URL
+Environment=N8N_HOST=n8n.gladecki.pl
+Environment=N8N_PORT=5678
+Environment=N8N_PROTOCOL=https
+Environment=WEBHOOK_URL=https://n8n.gladecki.pl/
+Environment=GENERIC_TIMEZONE=Europe/Warsaw
+
+# Persist your workflows and credentials
+Volume=n8n-data:/home/node/.n8n
+
+[Service]
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=default.target

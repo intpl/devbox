@@ -1,0 +1,22 @@
+[Unit]
+Description=Community Calendar Postgres (production)
+Requires=calendar-network.service
+After=calendar-network.service
+
+[Container]
+ContainerName=calendar-db
+Image=docker.io/library/postgres:16-alpine
+Network=calendar-net
+EnvironmentFile=/home/b/community_calendar/.env
+Volume=calendar-pgdata:/var/lib/postgresql/data
+HealthCmd=pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB"
+HealthInterval=10s
+HealthTimeout=5s
+HealthRetries=5
+
+[Service]
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=default.target

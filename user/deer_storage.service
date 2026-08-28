@@ -1,0 +1,29 @@
+[Unit]
+Description=Deer Storage (Podman Compose)
+After=network-online.target webnet-network.service
+Requires=webnet-network.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/b/deer_storage
+
+# Ensure no old containers are lingering from a bad shutdown
+ExecStartPre=/usr/bin/podman compose down
+
+# Start the stack in the foreground (no -d).
+# Systemd will monitor this process.
+ExecStart=/usr/bin/podman compose up
+
+# Gracefully stop the stack when systemd stops the service
+ExecStop=/usr/bin/podman compose down
+
+# Restart if the compose process crashes or exits unexpectedly
+Restart=always
+RestartSec=1s
+
+# Give it plenty of time to build the Phoenix image on first run
+TimeoutStartSec=600
+
+[Install]
+WantedBy=default.target

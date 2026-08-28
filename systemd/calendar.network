@@ -1,0 +1,8 @@
+[Unit]
+Description=calendar-net podman network for the Community Calendar stack
+
+[Network]
+NetworkName=calendar-net
+
+[Install]
+WantedBy=default.target
