@@ -1,7 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "small_model": "crof/deepseek-v4-flash",
-  "model": "crof/deepseek-v4-pro",
+  "small_model": "openrouter/z-ai/glm-5.2:free",
+  "model": "openrouter/z-ai/glm-5.2:free",
   "server": {
     "hostname": "0.0.0.0",
     "port": 4009,
@@ -11,7 +11,7 @@
   "agent": {
     "deep-research-synthesizer": {
       "mode": "primary",
-      "model": "crof/deepseek-v4-pro",
+      "model": "openrouter/z-ai/glm-5.2:free",
       "permission": {
         "task": "allow"
       }
@@ -19,7 +19,7 @@
     "research-thread": {
       "description": "Research subagent: investigates one narrow research question via web search and source fetching, returns structured findings. Invoked only by the deep-research-synthesizer orchestrator.",
       "mode": "subagent",
-      "model": "crof/deepseek-v4-flash",
+      "model": "openrouter/z-ai/glm-5.2:free",
       "hidden": true,
       "tools": {
         "websearch": true,
