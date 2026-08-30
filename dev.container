@@ -16,6 +16,7 @@ Volume=%h/syncthing/data/ZabawkaNotEncryptedSync:/root/ZabawkaNotEncryptedSync
 Volume=%h/dev:/home/b/dev
 Volume=%h/devbox/opencode-config:/root/.config/opencode
 Volume=%h/devbox/opencode-local:/root/.local/share/opencode
+Volume=%h/devbox/omp:/root/.omp
 Volume=inner-storage:/var/lib/containers
 EnvironmentFile=%h/devbox/.env
 

@@ -3,4 +3,5 @@
 *.log
 tmp/
 opencode-local/
+omp/
 .env

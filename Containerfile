@@ -42,6 +42,8 @@ RUN curl -fsSL \
     && install -m 0755 opencode /usr/local/bin/opencode \
     && rm -f /tmp/opencode.tar.gz /tmp/opencode
 
+RUN curl -fsSL https://omp.sh/install | sh
+
 # Git identity for everything committed inside the container.
 # Machine authorship is visible in history; no credentials exist here.
 RUN git config --system user.name "bartek ai" \
