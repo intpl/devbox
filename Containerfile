@@ -28,6 +28,8 @@ RUN dnf install -y \
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
+RUN curl -fsSL https://bun.com/install | bash
+
 # Pin OpenCode. Set to the current release from
 # https://github.com/sst/opencode/releases  (without this the build fails —
 # deliberately, so the version is always a conscious choice).

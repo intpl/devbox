@@ -65,6 +65,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 export TAG_SEARCH_PROG="rg"
 export FZF_DEFAULT_OPTS='-x'
+export BUN_INSTALL="$HOME/.bun"
 
 set -U FZF_LEGACY_KEYBINDINGS 0
 
@@ -81,6 +82,7 @@ set -x LC_ALL en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
 
 set --export PATH $HOME/.config/emacs/bin $PATH
+set --export PATH $BUN_INSTALL/bin $PATH
 set --export PATH $HOME/.local/bin $PATH
 
 
