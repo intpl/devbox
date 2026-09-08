@@ -1,5 +1,3 @@
-# Pin the base image by digest (step 4.2). quay.io/podman/stable is the
-# Podman team's purpose-built Podman-in-Podman image (multi-arch, has amd64).
 FROM quay.io/podman/stable:latest
 
 RUN dnf install -y \
@@ -49,6 +47,8 @@ COPY config.fish /root/.config/fish/config.fish
 
 # hack for opencode
 RUN touch /usr/local/bin/xdg-open; chmod +x /usr/local/bin/xdg-open
+
+RUN dnf upgrade -y
 
 WORKDIR /home/b/dev/
 CMD ["sleep", "infinity"]
