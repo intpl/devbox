@@ -21,6 +21,12 @@ RUN dnf install -y \
     python3 \
     ffmpeg-free \
     dejavu-sans-fonts \
+    pnpm \
+    whisper-cpp \
+    python3-pywhispercpp \
+    tesseract \
+    tesseract-langpack-eng \
+    tesseract-langpack-pol \
     && dnf clean all
 
 ENV LANG=en_US.UTF-8
@@ -50,5 +56,5 @@ RUN touch /usr/local/bin/xdg-open; chmod +x /usr/local/bin/xdg-open
 
 RUN dnf upgrade -y
 
-WORKDIR /home/b/dev/
-CMD ["sleep", "infinity"]
+WORKDIR /home/b/dev/deepseek-harness
+CMD ["pnpm", "dsh", "web", "--port", "4009", "--no-open", "--host", "89.58.63.247", "--public-url", "https://dsh.gladecki.pl", "--trusted-host", "dsh.gladecki.pl"]
