@@ -7,3 +7,5 @@ omp/
 .env
 dsh/.credentials.yaml
 dsh/.anonymous-user-id
+dsh/sessions/*
+dsh/storages/*
