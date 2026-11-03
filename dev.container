@@ -20,6 +20,7 @@ Volume=%h/devbox/omp:/root/.omp
 Volume=%h/devbox/dsh:/root/.dsh
 Volume=inner-storage:/var/lib/containers
 EnvironmentFile=%h/devbox/.env
+Exec=sh -c "pnpm install --frozen-lockfile && pnpm run build && exec pnpm dsh web --port 4009 --no-open --host 89.58.63.247 --public-url https://dsh.gladecki.pl --trusted-host dsh.gladecki.pl"
 
 [Service]
 Restart=always

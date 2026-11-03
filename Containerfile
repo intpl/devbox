@@ -60,5 +60,3 @@ RUN touch /usr/local/bin/xdg-open; chmod +x /usr/local/bin/xdg-open
 RUN dnf upgrade -y
 
 WORKDIR /home/b/dev/deepseek-harness
-RUN "pnpm run build"
-CMD ["pnpm", "dsh", "web", "--port", "4009", "--no-open", "--host", "89.58.63.247", "--public-url", "https://dsh.gladecki.pl", "--trusted-host", "dsh.gladecki.pl"]
