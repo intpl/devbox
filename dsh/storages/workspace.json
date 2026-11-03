@@ -1,0 +1,28 @@
+{
+  "unit": {
+    "name": "workspace",
+    "version": 2
+  },
+  "global": {
+    "initialized": true,
+    "workspaceIds": [
+      "05e8c280-42d6-4c03-bd49-427db4ac4c0e"
+    ],
+    "archivedSessionIds": [],
+    "pinnedSessionIds": []
+  },
+  "tables": {
+    "workspaces": {
+      "05e8c280-42d6-4c03-bd49-427db4ac4c0e": {
+        "path": "/root/ZabawkaNotEncryptedSync/ObsidianOnZabawka",
+        "title": "ObsidianOnZabawka",
+        "sessionIds": [
+          "session-ba115eaa-9650-408e-b506-3fe3fbe41f71",
+          "session-90c7a554-5dea-4284-a8f9-145326ed6b9e"
+        ],
+        "createdAt": "2026-11-02T17:57:40.984Z",
+        "updatedAt": "2026-11-03T10:10:04.991Z"
+      }
+    }
+  }
+}

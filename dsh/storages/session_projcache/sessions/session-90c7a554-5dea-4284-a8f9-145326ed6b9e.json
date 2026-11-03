@@ -1,0 +1,278 @@
+{
+  "version": 7,
+  "record": {
+    "identity": {
+      "formatVersion": 4,
+      "createdAt": 1793642261109,
+      "cwd": "/root/ZabawkaNotEncryptedSync/ObsidianOnZabawka",
+      "isSeeded": false,
+      "inheritedEventCount": 0
+    },
+    "rows": {
+      "sandboxMode": {
+        "ver": 1,
+        "seq": 20,
+        "val": "workspace-write"
+      },
+      "approvalState": {
+        "ver": 1,
+        "seq": 20,
+        "val": {
+          "policy": "ask",
+          "turnOpen": false
+        }
+      },
+      "turnBoundary": {
+        "ver": 2,
+        "seq": 20,
+        "val": {
+          "openTurnStartSeq": null,
+          "lastStepStartSeq": 6,
+          "lastStepBoundary": {
+            "kind": "end",
+            "seq": 19
+          },
+          "lastTurn": 1
+        }
+      },
+      "tokenMeasurement": {
+        "ver": 2,
+        "seq": 20,
+        "val": {
+          "headerSeq": 14,
+          "stepStart": null,
+          "anchor": null,
+          "invalidSeq": null
+        }
+      },
+      "subagentModelSelectionPolicy": {
+        "ver": 1,
+        "seq": 20,
+        "val": null
+      },
+      "userQuestions": {
+        "ver": 2,
+        "seq": 20,
+        "val": {
+          "inheritedEventCount": 0,
+          "timed": false,
+          "questions": {
+            "active": [],
+            "settled": []
+          }
+        }
+      },
+      "turnOutline": {
+        "ver": 2,
+        "seq": 20,
+        "val": {
+          "turns": [
+            {
+              "turn": 1,
+              "seq": 4,
+              "prompt": "/process-obsidian-inbox",
+              "response": ""
+            }
+          ],
+          "draft": ""
+        }
+      },
+      "tokenUsage": {
+        "ver": 2,
+        "seq": 20,
+        "val": {
+          "totals": {
+            "uncachedInputTokens": 0,
+            "outputTokens": 0,
+            "cacheReadTokens": 0,
+            "cacheWriteTokens": 0
+          },
+          "last": null
+        }
+      },
+      "sessionStats": {
+        "ver": 1,
+        "seq": 20,
+        "val": {
+          "turns": 1,
+          "steps": 1,
+          "llmMs": 0,
+          "toolMs": 0,
+          "ttftMs": 0,
+          "ttftSteps": 0,
+          "decodeMs": 0,
+          "decodeTokens": 0,
+          "lastTurn": 1,
+          "openStep": null,
+          "pendingCalls": {}
+        }
+      },
+      "contextPressure": {
+        "ver": 5,
+        "seq": 20,
+        "val": {
+          "surfaceTokens": 12939,
+          "contextWindow": 1048576
+        }
+      },
+      "title": {
+        "ver": 1,
+        "seq": 20,
+        "val": "/process-obsidian-inbox"
+      },
+      "llmRetry": {
+        "ver": 1,
+        "seq": 20,
+        "val": {}
+      },
+      "goal": {
+        "ver": 6,
+        "seq": 20,
+        "val": {
+          "current": null,
+          "seenGoalIds": [],
+          "failure": null
+        }
+      },
+      "agentPreset": {
+        "ver": 1,
+        "seq": 20,
+        "val": "standard"
+      },
+      "modelSelection": {
+        "ver": 3,
+        "seq": 20,
+        "val": {
+          "lastUsed": {
+            "provider": "deepseek-official",
+            "model": "deepseek-flash"
+          },
+          "pending": null
+        }
+      },
+      "workingDirectory": {
+        "ver": 1,
+        "seq": 20,
+        "val": "/root/ZabawkaNotEncryptedSync/ObsidianOnZabawka"
+      },
+      "contextBreakdown": {
+        "ver": 6,
+        "seq": 20,
+        "val": {
+          "systems": [
+            {
+              "seq": 7,
+              "tokens": 1384
+            }
+          ],
+          "surfaceTokens": 12939,
+          "breakdown": {
+            "systemTokens": 1384,
+            "toolsTokens": 7709,
+            "messageTokens": 11555
+          }
+        }
+      },
+      "titleInput": {
+        "ver": 3,
+        "seq": 20,
+        "val": {
+          "first": {
+            "seq": 8,
+            "text": "/process-obsidian-inbox"
+          },
+          "count": 1,
+          "lastSeq": 8
+        }
+      },
+      "inbox": {
+        "ver": 1,
+        "seq": 20,
+        "val": {
+          "next-turn": [],
+          "next-step": []
+        }
+      },
+      "permissions": {
+        "ver": 2,
+        "seq": 20,
+        "val": {
+          "preset": "workspace-write",
+          "sandbox": "workspace-write",
+          "approval": "ask",
+          "seeded": false
+        }
+      },
+      "subagentCatalog": {
+        "ver": 6,
+        "seq": 20,
+        "val": {
+          "inheritedEventCount": 0
+        }
+      },
+      "subagentTiming": {
+        "ver": 3,
+        "seq": 20,
+        "val": {
+          "descriptorSeen": false,
+          "settledMs": 0
+        }
+      },
+      "subagent": {
+        "ver": 2,
+        "seq": 20,
+        "val": {}
+      },
+      "timeContext": {
+        "ver": 3,
+        "seq": 20,
+        "val": {
+          "lastMessageTime": 1793642290333,
+          "lastInjectionTime": 1793642290333,
+          "lastTurnInjectionTime": null,
+          "browserTurn": 1,
+          "browserTimeZones": [
+            "Europe/Athens"
+          ]
+        }
+      },
+      "todos": {
+        "ver": 2,
+        "seq": 20,
+        "val": null
+      },
+      "plan": {
+        "ver": 4,
+        "seq": 20,
+        "val": {
+          "active": false,
+          "wanted": null,
+          "running": null,
+          "activeAtLastHeader": false,
+          "entered": false
+        }
+      },
+      "harnessDevLegacyPrompt": {
+        "ver": 1,
+        "seq": 20,
+        "val": {
+          "source": null,
+          "web": null
+        }
+      },
+      "sessionListMetadata": {
+        "ver": 1,
+        "seq": 20,
+        "val": {
+          "blank": false,
+          "lastPromptAt": 1793642290329
+        }
+      },
+      "imageLimits": {
+        "ver": 1,
+        "seq": 20,
+        "val": null
+      }
+    }
+  }
+}
