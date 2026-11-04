@@ -16,3 +16,13 @@
   config:
     provider: opencode-go
     model: deepseek-v4.1-flash
+- id: agent-loop
+  name: "@deepseek-ai/dsh-agent-loop"
+  config:
+    agents: []
+    maxParallelToolCalls: 50
+- id: bash-sandbox
+  name: "@deepseek-ai/dsh-bash-sandbox"
+  config:
+    timeoutMs: 120000
+    maxOutputBytes: 128000
